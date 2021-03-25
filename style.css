@@ -17,9 +17,9 @@ body{
     font-weight: 700;
 }
 
-body.active_menu{
-    height: 100vh;
+body.js-mobile-menu-open {
     overflow: hidden;
+    height:100%;
 }
 
 .wrapper{
