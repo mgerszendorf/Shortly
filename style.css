@@ -221,7 +221,7 @@ main img{
     transition: background-color .3s;
 }
 
-.get_started:hover{
+.get_started:active{
     background-color: #98E4E4;
 }
 
@@ -285,6 +285,10 @@ main img{
         right: 0;
         max-width: 560px;
     }
+
+    .get_started:hover{
+        background-color: #98E4E4;
+    }
 }
 
 @media all and (min-width: 1200px){
@@ -324,7 +328,6 @@ main img{
 
 .add_links_area{
     background-color: #F0F1F6;
-    /* background-color: #646; */
     margin-top: 15rem;
 }
 
@@ -374,7 +377,7 @@ main img{
     transition: background-color .3s;
 }
 
-#submit_btn:hover{
+#submit_btn:active{
     background-color: #98E4E4;;
 }
 
@@ -417,6 +420,10 @@ main img{
 
     .add_links{
         background-image: url(img/bg-shorten-desktop.png);
+    }
+
+    #submit_btn:hover{
+        background-color: #98E4E4;;
     }
 }
 
@@ -684,7 +691,7 @@ section.boost_section{
     transition: background-color .3s;
 }
 
-.boost_btn:hover{
+.boost_btn:active{
     background-color: #98E4E4;
 }
 
@@ -708,6 +715,10 @@ section.boost_section{
 
     .boost h3{
         font-size: 2rem;
+    }
+
+    .boost_btn:hover{
+        background-color: #98E4E4;
     }
 }
 
