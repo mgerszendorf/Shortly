@@ -467,6 +467,8 @@ main img{
     border-radius: 8px;
     border: none;
     margin: 0 auto 1.5rem auto;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .copy_button:hover{

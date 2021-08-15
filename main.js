@@ -57,20 +57,27 @@ const addLinkApp = () => {
       originalLink.appendChild(originalLinkText);
       originalLinkText.textContent = link.value;
 
-      // ==> Added the changed link
-      const changedLink = document.createElement("div");
-      activeAddedLink.appendChild(changedLink);
-      changedLink.classList.add("changed_link");
+      // API
+      fetch(`https://api.shrtco.de/v2/shorten?url=${link.value}`)
+        .then((res) => res.json())
+        .then((res) => {
+          // ==> Added the changed link
+          const changedLink = document.createElement("div");
+          activeAddedLink.appendChild(changedLink);
+          changedLink.classList.add("changed_link");
 
-      const changedLinkText = document.createElement("p");
-      changedLink.appendChild(changedLinkText);
-      changedLinkText.textContent = "shortly link soon...";
+          const changedLinkText = document.createElement("p");
+          changedLink.appendChild(changedLinkText);
+          if (res.result.full_short_link) {
+            changedLinkText.textContent = res.result.full_short_link;
+          }
 
-      // ==> Create copy button
-      const copyBtn = document.createElement("button");
-      activeAddedLink.appendChild(copyBtn);
-      copyBtn.classList.add("copy_button");
-      copyBtn.textContent = "Copy";
+          // ==> Create copy button
+          const copyBtn = document.createElement("button");
+          activeAddedLink.appendChild(copyBtn);
+          copyBtn.classList.add("copy_button");
+          copyBtn.textContent = "Copy";
+        });
 
       // ==> Delete text in area
       link.value = "";
